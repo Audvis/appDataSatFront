@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+button {
+  margin: 10px;
+}
+
+/* src/App.css */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.button-container .btn {
+  margin-right: 20px; /* Espacio entre los botones */
+}
+
+.button-container .btn:last-child {
+  margin-right: 0; /* Eliminar el margen del último botón */
+}
+
+
