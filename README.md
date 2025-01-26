@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Frontend de la Aplicación de Cancelados
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descripción
 
-## Available Scripts
+Este es el frontend de la aplicación de cancelados. Permite al usuario:
+- Descargar y guardar un archivo CSV.
+- Eliminar todos los registros de la base de datos.
+- Visualizar los registros de cancelación con paginación.
 
-In the project directory, you can run:
+## Requisitos
 
-### `npm start`
+Para ejecutar el proyecto frontend, asegúrate de tener instalados los siguientes requisitos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Node.js**: versión 14.x o superior.
+- **npm**: versión 6.x o superior.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación
 
-### `npm test`
+Sigue estos pasos para configurar y ejecutar el frontend:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clonar el repositorio**:
+   Si aún no has clonado el repositorio, utiliza el siguiente comando para hacerlo:
+   ```bash
+   git clone https://github.com/Audvis/appDataSatFront.git
+Navegar a la carpeta del proyecto: Después de clonar el repositorio, entra en la carpeta del frontend:
 
-### `npm run build`
+bash
+Copiar
+cd frontend
+Instalar las dependencias: Ejecuta el siguiente comando para instalar todas las dependencias necesarias para el proyecto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copiar
+npm install
+Esto descargará todos los paquetes necesarios, como React, Axios, Bootstrap y otros.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Ejecución
+Ejecutar la aplicación en modo de desarrollo: Para iniciar la aplicación en modo de desarrollo, utiliza el siguiente comando:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+Copiar
+npm start
+Esto iniciará un servidor de desarrollo y abrirá la aplicación en tu navegador en la siguiente dirección: http://localhost:3000.
 
-### `npm run eject`
+Funcionalidades
+El frontend de la aplicación tiene las siguientes funcionalidades:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Botón de Descargar y Guardar CSV: Permite al usuario descargar un archivo CSV desde el backend y guardarlo en la base de datos. Al presionar el botón, se realizará una solicitud al backend para obtener y almacenar el archivo CSV.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Botón para Borrar Todos los Registros: Permite al usuario borrar todos los registros almacenados en la base de datos. Este botón estará habilitado solo si existen registros en la base de datos.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Visualización de Datos: Los registros almacenados en la base de datos se muestran en una tabla con paginación. La paginación permite al usuario navegar a través de los registros sin sobrecargar la interfaz.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Dependencias
+Este proyecto usa las siguientes dependencias:
 
-## Learn More
+React: Librería de JavaScript para construir interfaces de usuario.
+Axios: Cliente HTTP para hacer peticiones al backend.
+React Bootstrap: Componentes de Bootstrap para React.
+React Paginate: Para agregar paginación a las tablas de datos.
+Para instalar estas dependencias, puedes ejecutar el comando:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copiar
+npm install axios react-bootstrap react-paginate
+Notas
+La aplicación está conectada al backend de la aplicación de cancelados que debe estar corriendo en http://127.0.0.1:5000. Si deseas cambiar la URL del backend, puedes hacerlo en el archivo de configuración correspondiente.
+El frontend hace uso de la API proporcionada por el backend para realizar las acciones de descarga de CSV, eliminación de registros y obtener datos.
+Si el backend no está en ejecución, los botones de descargar o borrar no tendrán efecto.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Licencia
+Este proyecto está bajo la Licencia MIT. Puedes consultar el archivo LICENSE en la raíz del proyecto para más detalles.
