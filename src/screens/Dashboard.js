@@ -96,8 +96,8 @@ const Dashboard = () => {
       {/* Mostrar el loader mientras se está procesando */}
       {loading && <Loader />}
 
-      {/* Mostrar el mensaje de confirmación */}
-      {showAlert && <CustomAlert message={alertMessage} />}
+      {/* Mostrar el mensaje de confirmación si no estamos cargando */}
+      {!loading && showAlert && <CustomAlert message={alertMessage} />}
 
       {/* Mostrar los datos en la tabla */}
       {!loading && !error && (
