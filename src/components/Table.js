@@ -2,7 +2,7 @@
 import React from 'react';
 import { Table, Pagination } from 'react-bootstrap';
 
-const DataTable = ({ data, totalPages, page, onPageChange }) => {
+const DataTable = ({ data = [], totalPages, page, onPageChange }) => {
   return (
     <div>
       <Table striped bordered hover responsive>

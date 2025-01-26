@@ -9,12 +9,13 @@ const useData = (initialPage = 1) => {
   const [totalCount, setTotalCount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const url = 'http://127.0.0.1:5000';
 
   const fetchData = async () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://127.0.0.1:5000/get_data?page=${page}&per_page=5`
+        `${url}/get_data?page=${page}&per_page=5`
       );
       setData(response.data.data);
       setTotalPages(response.data.total_pages);
@@ -33,7 +34,7 @@ const useData = (initialPage = 1) => {
   const downloadCsv = async () => {
     setLoading(true);
     try {
-      await axios.get('http://127.0.0.1:5000/download_csv');
+      await axios.get(`${url}/download_csv`);
       fetchData(); // Actualizamos los datos después de guardar el CSV
       return true;
     } catch (err) {
@@ -53,7 +54,7 @@ const useData = (initialPage = 1) => {
   const deleteAllData = async () => {
     setLoading(true);
     try {
-      await axios.delete('http://127.0.0.1:5000/delete_all');
+      await axios.delete(`${url}/delete_all`);
       setData([]); // Limpiamos los datos en el estado inmediatamente
       setTotalCount(0); // Reseteamos el contador
       return true;
